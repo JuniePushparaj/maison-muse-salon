@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Maison Muse Salon — thoughtful cuts, colour and care in Chennai. Book your appointment." />
+  <meta name="theme-color" content="#171714" />
+  <title>Maison Muse Salon | Chennai</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:#171714; --muted:#77756e; --paper:#f6f4ef; --white:#fffefa;
+      --gold:#b99a68; --line:#e4e0d7; --dark:#1d1e1a;
+      --serif:"Playfair Display", Georgia, serif; --sans:"DM Sans", Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    .announcement{background:var(--dark);color:#e9e3d8;text-align:center;padding:9px 16px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+    .announcement span{color:#d5b987}
+    header{position:sticky;top:0;z-index:20;background:rgba(246,244,239,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(23,23,20,.08)}
+    .nav{max-width:1180px;margin:auto;padding:17px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-family:var(--serif);font-size:25px;letter-spacing:.02em;line-height:1}
+    .brand small{display:block;font-family:var(--sans);font-size:8px;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);margin-top:7px}
+    .navlinks{display:flex;gap:30px;align-items:center;font-size:12px;letter-spacing:.06em;color:#4e4c46}
+    .navlinks a:hover{color:var(--gold)}
+    .nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:white;padding:13px 20px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;border:1px solid var(--ink);transition:.2s}
+    .nav-cta:hover,.button:hover{background:var(--gold);border-color:var(--gold)}
+    .menu-toggle{display:none;background:none;border:0;font-size:24px;color:var(--ink)}
+    .hero{min-height:650px;display:grid;grid-template-columns:1fr 1fr;background:#e9e5dc}
+    .hero-copy{padding:90px max(7vw,48px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+    .eyebrow{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#92764d;font-weight:700}
+    h1,h2,h3,p{margin-top:0}
+    h1{font:500 clamp(48px,6vw,78px)/1.05 var(--serif);letter-spacing:-.035em;margin:23px 0}
+    h1 em{font-weight:400;color:#9a8059}
+    .hero-copy p{max-width:420px;color:#68665f;font-size:14px;line-height:1.9;margin-bottom:30px}
+    .hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+    .text-link{font-size:11px;text-transform:uppercase;letter-spacing:.13em;border-bottom:1px solid var(--gold);padding-bottom:5px}
+    .hero-image{min-height:650px;position:relative;overflow:hidden}
+    .hero-image img{filter:brightness(.88)}
+    .image-note{position:absolute;bottom:28px;left:28px;background:rgba(246,244,239,.92);padding:14px 18px;font:italic 16px var(--serif)}
+    .section{max-width:1180px;margin:auto;padding:100px 28px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}
+    .section-head h2{font:500 clamp(34px,4vw,50px)/1.1 var(--serif);margin:12px 0 0;letter-spacing:-.025em}
+    .section-head p{max-width:360px;color:var(--muted);font-size:13px;margin:0}
+    .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .intro-photo{height:480px;position:relative}
+    .intro-photo:after{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid #c8b89d;z-index:0}
+    .intro-photo img{position:relative;z-index:1}
+    .intro-copy h2{font:500 46px/1.12 var(--serif);letter-spacing:-.03em;margin:16px 0 22px}
+    .intro-copy p{color:var(--muted);font-size:14px;line-height:1.95}
+    .signature{font:italic 24px var(--serif);color:#987b51;margin-top:26px}
+    .services{background:var(--white)}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+    .service{background:var(--white);padding:30px 28px;min-height:210px;display:flex;flex-direction:column}
+    .service .number{font:italic 15px var(--serif);color:var(--gold)}
+    .service h3{font:500 25px var(--serif);margin:22px 0 8px}
+    .service p{font-size:12px;color:var(--muted);margin:0;line-height:1.8}
+    .service .price{margin-top:auto;padding-top:22px;font-size:11px;letter-spacing:.08em;color:#8a704a;text-transform:uppercase}
+    .gallery-grid{display:grid;grid-template-columns:1.1fr .9fr 1fr;grid-template-rows:230px 230px;gap:14px}
+    .gallery-grid .tall{grid-row:span 2}
+    .gallery-grid .wide{grid-column:span 2}
+    .gallery-grid img{transition:transform .5s}
+    .gallery-grid a{overflow:hidden}
+    .gallery-grid a:hover img{transform:scale(1.04)}
+    .quote{background:var(--dark);color:#f4f0e8;text-align:center;padding:90px 24px}
+    .quote blockquote{max-width:800px;margin:0 auto;font:400 clamp(26px,4vw,42px)/1.35 var(--serif)}
+    .quote .eyebrow{color:#c7aa7b;margin-bottom:22px}
+    .quote small{display:block;margin-top:25px;color:#b9b5aa;font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+    .visit{background:#ebe7de}
+    .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+    .visit h2{font:500 46px/1.1 var(--serif);margin:14px 0 22px}
+    .visit p{font-size:13px;color:var(--muted);line-height:1.9}
+    .details{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-top:32px}
+    .detail strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.15em;margin-bottom:8px}
+    .detail span{font-size:13px;color:#68665f}
+    .map-panel{min-height:390px;background:#d7d1c4;position:relative;overflow:hidden}
+    .map-panel img{opacity:.78;filter:grayscale(.7)}
+    .map-card{position:absolute;left:22px;bottom:22px;background:var(--white);padding:20px 23px;max-width:260px}
+    .map-card strong{font:22px var(--serif);display:block;margin-bottom:6px}
+    .map-card span{font-size:11px;color:var(--muted)}
+    footer{background:var(--dark);color:#e9e4da;padding:38px 28px}
+    .footer-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:25px}
+    footer .brand small{color:#a9a398}
+    footer p{font-size:10px;color:#aaa69b;margin:0}
+    .social{display:flex;gap:20px;font-size:11px;color:#d0c9bb}
+    .whatsapp{position:fixed;right:22px;bottom:22px;z-index:30;background:#254d3b;color:white;padding:14px 18px;border-radius:30px;box-shadow:0 8px 28px #0002;font-size:11px;letter-spacing:.06em}
+    @media(max-width:800px){
+      .nav{padding:15px 20px}.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:var(--paper);padding:22px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}
+      .navlinks.open{display:flex}.nav-cta{display:none}
+      .hero{grid-template-columns:1fr}.hero-copy{padding:72px 26px 60px;order:2}.hero-image{min-height:420px;order:1}
+      .section{padding:75px 22px}.section-head{display:block}.section-head p{margin-top:18px}
+      .intro-grid,.visit-grid{grid-template-columns:1fr;gap:48px}.intro-photo{height:380px;margin-right:18px}
+      .service-grid{grid-template-columns:1fr 1fr}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:190px 190px 190px}.gallery-grid .tall{grid-row:span 2}.gallery-grid .wide{grid-column:span 2}
+      .map-panel{min-height:330px}.footer-inner{flex-direction:column;align-items:flex-start}
+    }
+    @media(max-width:480px){
+      .hero-image{min-height:340px}.hero-copy{padding:55px 22px}.service-grid{grid-template-columns:1fr}.service{min-height:185px}
+      .gallery-grid{grid-template-rows:150px 150px 150px;gap:8px}.details{grid-template-columns:1fr 1fr;gap:20px}
+      .intro-copy h2,.visit h2{font-size:38px}
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">A little time for yourself <span>·</span> Now welcoming appointments in Chennai</div>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#home">Maison Muse<small>Salon · Chennai</small></a>
+      <button class="menu-toggle" aria-label="Open menu" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+      <div class="navlinks">
+        <a href="#about">Our story</a><a href="#services">Services</a><a href="#gallery">The space</a><a href="#visit">Find us</a>
+      </div>
+      <a class="nav-cta" href="https://wa.me/919876543210?text=Hello%20Maison%20Muse%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Book an appointment ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow">The art of feeling like you</div>
+        <h1>Good hair.<br><em>Great energy.</em></h1>
+        <p>A considered salon experience for modern Chennai. Thoughtful cuts, beautiful colour and a little space to slow down.</p>
+        <div class="hero-actions">
+          <a class="button" href="https://wa.me/919876543210?text=Hello%20Maison%20Muse%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Book your visit</a>
+          <a class="text-link" href="#services">Explore services</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1400&q=85" alt="Stylist working on a client's hair in a modern salon">
+        <div class="image-note">Your moment. Your style.</div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="intro-grid">
+        <div class="intro-photo">
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=85" alt="Warm, refined salon interior">
+        </div>
+        <div class="intro-copy">
+          <div class="eyebrow">More than a haircut</div>
+          <h2>Beauty, with a lighter touch.</h2>
+          <p>At Maison Muse, we believe great style starts with listening. Our team takes the time to understand your hair, your routine and the look that feels naturally yours.</p>
+          <p>From your first consultation to the final finish, expect considered details, honest advice and a warm welcome every time.</p>
+          <div class="signature">Come as you are.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="section">
+        <div class="section-head">
+          <div><div class="eyebrow">A little something for you</div><h2>Our services</h2></div>
+          <p>Personalised care, quality products and skilled hands. Every service begins with a conversation.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service"><span class="number">01 / CUT & STYLE</span><h3>Cut & Finish</h3><p>Precision cuts, fresh layers and effortless styling made for you.</p><div class="price">From ₹800</div></article>
+          <article class="service"><span class="number">02 / COLOUR</span><h3>Colour Studio</h3><p>Gloss, global colour, highlights and dimensional tones.</p><div class="price">From ₹2,500</div></article>
+          <article class="service"><span class="number">03 / HAIR CARE</span><h3>Repair Rituals</h3><p>Nourishing treatments to restore softness, shine and strength.</p><div class="price">From ₹1,500</div></article>
+          <article class="service"><span class="number">04 / SKIN</span><h3>Skin & Glow</h3><p>Feel-good facials and thoughtful skin essentials.</p><div class="price">From ₹1,200</div></article>
+          <article class="service"><span class="number">05 / GROOMING</span><h3>Everyday Grooming</h3><p>Clean, considered grooming and finishing touches.</p><div class="price">From ₹500</div></article>
+          <article class="service"><span class="number">06 / OCCASIONS</span><h3>Event Styling</h3><p>Polished looks for celebrations, evenings and everything in between.</p><div class="price">Consultation recommended</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="section-head">
+        <div><div class="eyebrow">A space to feel good</div><h2>Inside Maison Muse</h2></div>
+        <p>Warm textures, thoughtful details and a team that makes you feel at home.</p>
+      </div>
+      <div class="gallery-grid">
+        <a class="tall" href="#visit"><img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d2?auto=format&fit=crop&w=900&q=85" alt="Elegant salon styling station"></a>
+        <a href="#visit"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=85" alt="Modern salon interior"></a>
+        <a href="#visit"><img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=800&q=85" alt="Salon hair styling"></a>
+        <a class="wide" href="#visit"><img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1100&q=85" alt="Haircare and beauty products"></a>
+      </div>
+    </section>
+
+    <section class="quote">
+      <div class="eyebrow">The Maison Muse feeling</div>
+      <blockquote>“The best version of your style is the one that still feels completely like you.”</blockquote>
+      <small>Good hair days begin here</small>
+    </section>
+
+    <section class="visit" id="visit">
+      <div class="section">
+        <div class="visit-grid">
+          <div>
+            <div class="eyebrow">Your chair is waiting</div>
+            <h2>Let's make time for you.</h2>
+            <p>Whether you know exactly what you want or need a little inspiration, we'd love to hear from you. Message us to find a time that works.</p>
+            <div class="details">
+              <div class="detail"><strong>Visit us</strong><span>Anna Nagar, Chennai<br>Tamil Nadu 600040</span></div>
+              <div class="detail"><strong>Opening hours</strong><span>Tue – Sun<br>10:00 AM – 8:00 PM</span></div>
+              <div class="detail"><strong>Call us</strong><span>+91 98765 43210</span></div>
+              <div class="detail"><strong>Follow along</strong><span>@maisonmuse.chennai</span></div>
+            </div>
+            <p style="margin-top:30px"><a class="button" href="https://wa.me/919876543210?text=Hello%20Maison%20Muse%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Message on WhatsApp ↗</a></p>
+          </div>
+          <div class="map-panel">
+            <img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69c07b?auto=format&fit=crop&w=1100&q=80" alt="City streets in Chennai">
+            <div class="map-card"><strong>Find your way here.</strong><span>Anna Nagar, Chennai · Tamil Nadu</span><br><a class="text-link" style="display:inline-block;margin-top:14px" href="https://www.google.com/maps/search/?api=1&query=Anna+Nagar+Chennai" target="_blank" rel="noopener">Get directions ↗</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a class="brand" href="#home">Maison Muse<small>Salon · Chennai</small></a>
+      <p>© 2026 Maison Muse Salon. All rights reserved.</p>
+      <div class="social"><a href="#visit">Instagram</a><a href="#visit">WhatsApp</a></div>
+    </div>
+  </footer>
+  <a class="whatsapp" href="https://wa.me/919876543210?text=Hello%20Maison%20Muse%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp us ↗</a>
+</body>
+</html>
